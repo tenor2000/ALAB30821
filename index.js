@@ -2,66 +2,100 @@
 
 const radius = 5; // in meters
 const PI = 3.1415;
-const area = PI * radius * radius; // in square meters
+const areaMax = PI * radius * radius; // in square meters
 const growthRate = 2; // doubles every week
-const plantSpace = 0.8; // in square meters
+const plantPersonalSpace = 0.8; // in square meters
 
-const startingPlants = 20;
-const startingPlantSpace = startingPlants * plantSpace;
+const startPlantsNum = 20;
 
-const plantsAfter1Week = startingPlants * growthRate;
-const totalAreaAfter1Week = plantsAfter1Week * plantSpace;
-
-// Week 1
-
-console.log("\n");
-console.log(`Number of plants after 1 week: ${plantsAfter1Week}`);
 console.log(
-  `Plant area occupied after 1 week: ${totalAreaAfter1Week} / ${area} Square Meters`
+  `\nWe will start our experiment with ${startPlantsNum} plants and monitor them closely...\n
+  The containment area will be ${areaMax} square meters...\n
+  Each plant will take ${plantPersonalSpace} square meters of space...\n
+  The number of plants should grow times ${growthRate} per week...\n
+  May god have mercy on us all...\n`
 );
 
-if (totalAreaAfter1Week > area * 0.8) {
-  console.log("Analysis... the plants need to be pruned");
-} else if (totalAreaAfter1Week >= area * 0.5) {
-  console.log("Analysis... the plants need to be monitored");
-} else {
-  console.log("Analysis... more plants can be planted");
+// Week 1
+let weekNumber = 1;
+{
+  const totalPlants = startPlantsNum * growthRate ** weekNumber;
+  const totalArea = totalPlants * plantPersonalSpace;
+  let analysis = "";
+
+  if (totalArea > areaMax * 0.8) {
+    analysis =
+      "the plants have taken over the city and must be stopped at all costs by PRUNING!";
+  } else if (totalArea >= areaMax * 0.5) {
+    analysis =
+      "the plants have expanded their territory agressively and need to be MONITORED!";
+  } else {
+    analysis =
+      "the plants appear docile, our scientists can be allowed to have more plants PLANTED!";
+  }
+
+  const report = `After ${weekNumber} week${weekNumber > 1 ? "s" : ""}...
+  The numbers have grown to ${totalPlants} plants which occupies ${totalArea} square meters of space. 
+  This is ${
+    (totalArea / areaMax) * 100
+  }% of the total containment area of ${areaMax} square meters. 
+  ANALYSIS: ${analysis}.`;
+
+  console.log(report);
 }
 
 // Week 2
+weekNumber = 2;
+{
+  const totalPlants = startPlantsNum * growthRate ** weekNumber;
+  const totalArea = totalPlants * plantPersonalSpace;
+  let analysis = "";
 
-const plantsAfter2Weeks = plantsAfter1Week * growthRate;
-const totalAreaAfter2Weeks = plantsAfter2Weeks * plantSpace;
+  if (totalArea > areaMax * 0.8) {
+    analysis =
+      "the plants have taken over the city and must be stopped at all costs by PRUNING!";
+  } else if (totalArea >= areaMax * 0.5) {
+    analysis =
+      "the plants have expanded their territory agressively and need to be MONITORED!";
+  } else {
+    analysis =
+      "the plants appear docile, our scientists can be allowed to have more plants PLANTED!";
+  }
 
-console.log("\n");
-console.log(`Number of plants after 2 weeks: ${plantsAfter2Weeks}`);
-console.log(
-  `Plant area occupied after 2 weeks: ${totalAreaAfter2Weeks} / ${area} Square Meters`
-);
+  const report = `After ${weekNumber} week${weekNumber > 1 ? "s" : ""}...
+  The numbers have grown to ${totalPlants} plants which occupies ${totalArea} square meters of space. 
+  This is ${
+    (totalArea / areaMax) * 100
+  }% of the total containment area of ${areaMax} square meters. 
+  ANALYSIS: ${analysis}.`;
 
-if (totalAreaAfter2Weeks > area * 0.8) {
-  console.log("Analysis... the plants need to be pruned");
-} else if (totalAreaAfter2Weeks >= area * 0.5) {
-  console.log("Analysis... the plants need to be monitored");
-} else {
-  console.log("Analysis... more plants can be planted");
+  console.log(report);
 }
 
 // Week 3
+weekNumber = 3;
+{
+  const totalPlants = startPlantsNum * growthRate ** weekNumber;
+  const totalArea = totalPlants * plantPersonalSpace;
+  let analysis = "";
 
-const plantsAfter3Weeks = plantsAfter2Weeks * growthRate;
-const totalAreaAfter3Weeks = plantsAfter3Weeks * plantSpace;
+  if (totalArea > areaMax * 0.8) {
+    analysis =
+      "the plants have taken over the city and must be stopped at all costs by PRUNING!";
+  } else if (totalArea >= areaMax * 0.5) {
+    analysis =
+      "the plants have expanded their territory agressively and need to be MONITORED!";
+  } else {
+    analysis =
+      "the plants appear docile, our scientists can be allowed to have more plants PLANTED!";
+  }
 
-console.log("\n");
-console.log(`Number of plants after 3 weeks: ${plantsAfter3Weeks}`);
-console.log(
-  `Plant area occupied after 3 weeks: ${totalAreaAfter3Weeks} / ${area} Square Meters`
-);
+  const report = `After ${weekNumber} week${weekNumber > 1 ? "s" : ""}...
+  The numbers have grown to ${totalPlants} plants which occupies ${totalArea} square meters of space. 
+  This is ${
+    (totalArea / areaMax) * 100
+  }% of the total containment area of ${areaMax} square meters. 
+  ANALYSIS: ${analysis}.`;
 
-if (totalAreaAfter3Weeks > area * 0.8) {
-  console.log("Analysis... the plants need to be pruned");
-} else if (totalAreaAfter3Weeks >= area * 0.5) {
-  console.log("Analysis... the plants need to be monitored");
-} else {
-  console.log("Analysis... more plants can be planted");
+  console.log(report);
 }
