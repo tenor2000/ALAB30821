@@ -28,7 +28,7 @@ let weekNumber = 10;
       "the plants have taken over the city and must be stopped at all costs by PRUNING!";
   } else if (totalArea >= areaMax * 0.5) {
     analysis =
-      "the plants have expanded their territory agressively and need to be MONITORED!";
+      "the plants have expanded their territory aggressively and need to be MONITORED!";
   } else {
     analysis =
       "the plants appear docile, our scientists can be allowed to have more plants PLANTED!";
